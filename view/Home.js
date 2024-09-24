@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import {
   Image,
   SafeAreaView,
@@ -8,6 +9,7 @@ import {
 } from "react-native";
 
 export default function Home() {
+  const navigation = useNavigation();
   const stars = [];
 
   // Lặp để tạo ra 5 ngôi sao
@@ -67,7 +69,7 @@ export default function Home() {
           <View style={styles.buttonFooter}>
             <TouchableOpacity
               style={styles.button1}
-              onPress={() => alert("Button pressed")}
+              onPress={()=>navigation.navigate("Color")}
             >
               <Text style={styles.buttonText1}>CHỌN MUA</Text>
             </TouchableOpacity>
@@ -146,7 +148,7 @@ const styles = StyleSheet.create({
     justifyContent:"flex-end"
   },
   button1: {
-    backgroundColor: "#EEOAOA",
+    backgroundColor: "red",
     padding: 15,
     borderRadius: 10,
   },
